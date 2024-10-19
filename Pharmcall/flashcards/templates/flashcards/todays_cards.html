@@ -1,0 +1,18 @@
+{% extends 'flashcards/base.html' %}
+{% load static %}
+{% block content %}
+<h1 class="text-center">Today's Cards</h1>
+<h2 id="progress-indicator" class="text-center"></h2>
+<div id="card-container">
+    <!-- The card will be inserted here by scripts.js -->
+</div>
+
+<!-- Initialize userCards variable -->
+<script>
+    var userCards = {{ user_cards_json|safe }};
+</script>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'flashcards/js/scripts.js' %}"></script>
+{% endblock %}

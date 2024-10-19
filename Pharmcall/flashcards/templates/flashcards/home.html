@@ -1,0 +1,60 @@
+{% extends 'flashcards/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">PharmCall</h1>
+        <p class="hero-subtitle">
+            Master pharmaceutical knowledge through active recall and spaced repetition.
+        </p>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits-section">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Benefits</h2>
+            <p>Discover how PharmCall can enhance your learning experience.</p>
+        </div>
+
+        <div class="benefit-boxes">
+            <!-- Benefit: Personalized Learning -->
+            <div class="benefit-box">
+                <img src="{% static 'C:\Users\Mark\Desktop\Pharmcall\Pharmcall\flashcards\static\flashcards\images\Learning.png' %}" 
+                     alt="Personalized Learning Icon" />
+                <h3>Personalized Learning</h3>
+                <p>Tailor your study sessions to focus on areas where you need improvement.</p>
+            </div>
+
+            <!-- Benefit: Track Progress -->
+            <div class="benefit-box">
+                <img src="{% static 'C:\Users\Mark\Desktop\Pharmcall\Pharmcall\flashcards\static\flashcards\images\Track.png' %}"
+                     alt="Track Progress Icon" />
+                <h3>Track Progress</h3>
+                <p>Monitor your advancement with detailed statistics and reports.</p>
+            </div>
+
+            <!-- Benefit: Optimized Recall -->
+            <div class="benefit-box">
+                <img src="{% static 'C:\Users\Mark\Desktop\Pharmcall\Pharmcall\flashcards\static\flashcards\images\Recall.png' %}" 
+                     alt="Optimized Recall Icon" />
+                <h3>Optimized Recall</h3>
+                <p>Utilize spaced repetition techniques to enhance memory retention.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Get Started with PharmCall Free Today!</h2>
+        <p>Join now and take your pharmaceutical knowledge to the next level.</p>
+        <a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a>
+        <a href="{% url 'login' %}" class="btn btn-secondary">Log In</a>
+    </div>
+</section>
+{% endblock %}

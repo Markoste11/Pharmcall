@@ -1,0 +1,363 @@
+/* General Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+.py-5 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: #e6f7ff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f0f0f0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    text-decoration: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0088cc;
+    border-color: #0088cc;
+}
+
+.btn-primary:hover {
+    background-color: #006699;
+    border-color: #006699;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    color: white;
+    padding: 150px 0;
+    background: #faf4f0;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 15rem;
+    font-weight: 900;
+    margin: 0;
+    background: #1066ff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #000000;
+}
+
+/* Benefits Section */
+.benefits-section {
+    background-color: #faf5f0;
+    padding: 60px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.section-heading p {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.benefit-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.benefit-box {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 250px;
+}
+
+.benefit-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-box img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.benefit-box h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.benefit-box p {
+    font-size: 1rem;
+    color: #333333;
+}
+
+/* CTA Section */
+.cta-section {
+    background: #faf5f0;
+    padding: 50px 0;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+.cta-section .btn {
+    margin: 10px;
+}
+
+/* Flashcard Styles */
+.flashcard {
+    width: 90%;             /* Make the flashcard width responsive */
+    max-width: 600px;       /* Set a maximum width */
+    height: auto;           /* Allow the height to adjust based on content */
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 20px auto;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    min-height: 300px;      /* Set a minimum height */
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flashcard.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;         /* Enable scrolling if content overflows */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 30px 20px;     /* Adjusted padding for better spacing */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    font-size: 1.5rem;      /* Increased font size */
+    box-sizing: border-box; /* Include padding in width and height */
+}
+
+.card-front {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-back {
+    background-color: #e6f7ff;
+    transform: rotateY(180deg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Flashcard Content */
+.card-front p,
+.card-back p {
+    margin: 0;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.slider {
+    width: 80%;
+    margin: 0 auto;
+    height: 5px;
+    background: #d3d3d3;
+    border-radius: 5px;
+    outline: none;
+    appearance: none;
+}
+
+.slider::-webkit-slider-thumb,
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #00aaff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 80%;
+    margin: 20px auto 0;
+}
+
+.slider-labels span {
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .benefit-box {
+        width: 80%;
+    }
+}
+/* Congratulations Message Styles */
+.congratulations-message {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.congratulations-message h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #00C09D;
+    margin-bottom: 20px;
+}
+
+.congratulations-message p {
+    font-size: 1.8rem;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.congratulations-message .continue-btn {
+    background-color: #00C09D;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.congratulations-message .continue-btn:hover {
+    background-color: #008b75;
+}
+
+/* Confetti Canvas */
+canvas.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}

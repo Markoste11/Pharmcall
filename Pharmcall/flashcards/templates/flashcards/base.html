@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PharmCall{% endblock %}</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS (if any) -->
+    <link rel="stylesheet" href="{% static 'flashcards/css/styles.css' %}">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header Section -->
+    <nav id="header" class="fixed w-full z-30 top-0 bg-white shadow-md">
+        <div class="container mx-auto flex flex-wrap items-center justify-between py-4">
+            <a class="text-2xl font-bold text-blue-600" href="{% url 'home' %}">
+                PharmCall
+            </a>
+
+            <button id="nav-toggle" class="block lg:hidden px-2">
+                <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M3 5h14M3 10h14M3 15h14"/>
+                </svg>
+            </button>
+
+            <div id="nav-content" class="hidden lg:flex lg:items-center w-full lg:w-auto mt-2 lg:mt-0">
+                <ul class="flex flex-col lg:flex-row items-center lg:space-x-6">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'todays_cards' %}" class="text-gray-800 hover:text-blue-600">My Cards</a></li>
+                        <li><a href="{% url 'user_stats' %}" class="text-gray-800 hover:text-blue-600">Statistics</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}" class="text-gray-800 hover:text-blue-600">Log In</a></li>
+                        <li><a href="{% url 'signup' %}" class="text-gray-800 hover:text-blue-600">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto pt-24 px-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-blue-600 text-white py-8 mt-10">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="{% url 'home' %}" class="hover:underline">Home</a>
+                <!-- Add more links if needed -->
+            </div>
+            <p>&copy; {{ current_year }} PharmCall. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navContent = document.getElementById('nav-content');
+
+        navToggle.addEventListener('click', () => {
+            navContent.classList.toggle('hidden');
+        });
+    </script>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

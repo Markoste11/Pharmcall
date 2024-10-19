@@ -1,0 +1,37 @@
+{% extends 'flashcards/base.html' %}
+
+{% block content %}
+<h2>Your Performance Statistics</h2>
+
+<h3>By Category</h3>
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Average Quality</th>
+        <th>Review Count</th>
+    </tr>
+    {% for stat in category_stats %}
+    <tr>
+        <td>{{ stat.category }}</td>
+        <td>{{ stat.average_quality|floatformat:2 }}</td>
+        <td>{{ stat.review_count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>By Medicine</h3>
+<table>
+    <tr>
+        <th>Medicine</th>
+        <th>Average Quality</th>
+        <th>Review Count</th>
+    </tr>
+    {% for stat in medicine_stats %}
+    <tr>
+        <td>{{ stat.medicine }}</td>
+        <td>{{ stat.average_quality|floatformat:2 }}</td>
+        <td>{{ stat.review_count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
